@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body{
+            background-color: rgb(51, 44, 44);
+            margin: 50px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        section{
+            width: 100%;
+            background-color: #555;
+            height: 200px;
+        }
+
+        button[id="output"] {
+            background-color: #ddd;
+            display: block;
+            width: 323px;
+            height: 30px;
+            text-align: end;
+            padding-top: 8px;
+            border: none;
+            padding-right: 4px;
+            box-sizing: border-box;
+            font-size: 20px;
+            margin: 50px auto 10px;
+
+        }
+        
+        button{
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        button[onclick="limpar()"] {
+            margin-left: 40px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <section>
+        <h1>Calculadora Operações Básicas</h1>
+
+        <!-- ao clicar aqui você pode reiniciar a calculadora, sem recarregar a página -->
+        <button id="output" onclick="novo()">5</div>
+
+        <button onclick="somar()">+</button>
+        <button onclick="subtrair()">-</button>
+        <button onclick="multiplicar()">*</button>
+        <button onclick="dividir()">/</button>
+
+        <!-- Ao clicar aqui reseta o visor para 0 -->
+        <button onclick="limpar()">C</button>
+    
+    </section>
+
+    <script>
+        var n = prompt("Digite um número");
+        n = parseInt(n);
+
+        var output = document.querySelector("#output");
+
+        output.innerHTML = n;
+
+        function novo(){
+            var novo = prompt("Digite um número");
+            novo = parseInt(novo);
+
+            n = novo;
+
+            output.innerHTML = n;
+        }
+
+        function somar(){
+            var somar = prompt("Digite um número");
+            somar = parseInt(somar);
+            
+            n = (n + somar);
+
+            output.innerHTML = n;
+        }
+
+        function subtrair(){
+            var subtrair = prompt("Digite um número");
+            subtrair = parseInt(subtrair)
+
+            n = n-subtrair;
+
+            output.innerHTML = n;
+        }
+
+        function multiplicar(){
+            var multiplicar = prompt("Digite um número");
+            multiplicar = parseInt(multiplicar);
+
+            n = n * multiplicar;
+
+            output.innerHTML = n;
+        }
+
+        function dividir(){
+            var dividir = prompt("Digite um número");
+            divir = parseInt(dividir);
+
+            n = n / dividir;
+
+            output.innerHTML = n;
+        }
+
+        function limpar(){
+            n = 0
+
+            output.innerHTML = n;
+        }
+
+
+
+    </script>
+
+</body>
+</html>
