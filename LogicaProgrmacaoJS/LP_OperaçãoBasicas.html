@@ -68,61 +68,78 @@
 
     <script>
         var n = prompt("Digite um número");
-        n = parseInt(n);
+        n = parseFloat(n);
 
-        var output = document.querySelector("#output");
+        atualizarvisor();
+        // atualizei criando um funcão pra isso, porque caso seja necessário alterar a tag, a classe 
+        // ou qualquer coisa no objeto HTML só será necessário alterar uma única vez na função criada.
+    
 
-        output.innerHTML = n;
+        // var output = document.querySelector("#output");
+
+        // output.innerHTML = n;
+
+        function atualizarvisor(){
+            var output = document.querySelector("#output");
+
+            output.innerHTML = n;
+        }
 
         function novo(){
             var novo = prompt("Digite um número");
-            novo = parseInt(novo);
+            novo = parseFloat(novo);
 
             n = novo;
 
-            output.innerHTML = n;
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
         function somar(){
             var somar = prompt("Digite um número");
-            somar = parseInt(somar);
+            somar = parseFloat(somar);
             
             n = (n + somar);
 
-            output.innerHTML = n;
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
         function subtrair(){
             var subtrair = prompt("Digite um número");
-            subtrair = parseInt(subtrair)
+            subtrair = parseFloat(subtrair)
 
             n = n-subtrair;
 
-            output.innerHTML = n;
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
         function multiplicar(){
             var multiplicar = prompt("Digite um número");
-            multiplicar = parseInt(multiplicar);
+            multiplicar = parseFloat(multiplicar);
 
             n = n * multiplicar;
 
-            output.innerHTML = n;
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
         function dividir(){
             var dividir = prompt("Digite um número");
-            divir = parseInt(dividir);
+            divir = parseFloat(dividir);
 
             n = n / dividir;
-
-            output.innerHTML = n;
+            
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
         function limpar(){
             n = 0
 
-            output.innerHTML = n;
+            atualizarvisor();
+            // output.innerHTML = n;
         }
 
 
