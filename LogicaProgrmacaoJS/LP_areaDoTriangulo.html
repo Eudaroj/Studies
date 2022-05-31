@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Área do triângulo:</h1>
+    <div id="output"></div>
+
+    <button onclick="areatriangulo()">Área do Triângulo</button>
+
+
+    <script>
+        areatriangulo()
+
+
+        function escreve(mensagem){
+            let output = document.querySelector("#output");
+            output.innerHTML = mensagem;
+        }
+
+        function areatriangulo(){
+            let n1 = parseFloat(prompt("Digite a altura do Triângulo"));
+            let n2 = parseFloat(prompt("Digite a largura do Triângulo"));
+
+            // try{
+            //     let result = calcular(n1, n2);
+            // } catch(e){
+            //     result = e;
+            // }
+
+            let result = calcular(n1, n2);
+
+            escreve(result);
+        }
+
+        function calcular(a, l){
+            
+            if( isNaN(a) || isNaN(l)){
+                alert("Digite um número válido")
+                return 0;
+                // throw new Error("Digite um numero válido")
+            }
+            
+            return a * l / 2;
+        }
+
+
+
+    </script>
+
+    
+</body>
+</html>
