@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+
+    <style>
+        body{
+            background-color: rgb(51, 44, 44);
+            margin: 50px auto;
+            width: 80%;
+            text-align: center;
+        }
+
+        section{
+            width: 100%;
+            background-color: #555;
+            height: 200px;
+        }
+
+        button[id="output"] {
+            background-color: #ddd;
+            display: block;
+            width: 323px;
+            height: 30px;
+            text-align: end;
+            padding-top: 8px;
+            border: none;
+            padding-right: 4px;
+            box-sizing: border-box;
+            font-size: 20px;
+            margin: 50px auto 10px;
+
+        }
+        
+        button{
+            font-size: 20px;
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+        }
+
+        button[onclick="limpar()"] {
+            margin-left: 40px;
+        }
+
+    </style>
+
+
+</head>
+<body>
+    <section>
+        <h1>Calculadora Operações Básicas</h1>
+
+        <!-- ao clicar aqui você pode reiniciar a calculadora, sem recarregar a página -->
+        <button id="output" onclick="novo()">5</div>
+
+        <button onclick="iniciarCalculo('+')">+</button>
+        <button onclick="iniciarCalculo('-')">-</button>
+        <button onclick="iniciarCalculo('*')">x</button>
+        <button onclick="iniciarCalculo('/')">/</button>
+
+        <!-- Ao clicar aqui reseta o visor para 0 -->
+        <button onclick="limpar('')">C</button>
+    
+    </section>
+
+    <script>
+        var n = prompt("Digite um número");
+        n = parseFloat(n);
+
+        escreve(n);
+
+        function iniciarCalculo(simbolo){
+            var n1 = document.querySelector("#output").textContent;
+            var n1 = parseFloat(n1);
+
+            var n2 = prompt("Digite outro número");
+            n2 = parseFloat(n2);
+
+            var msg = calcular(simbolo, n1, n2);
+
+            escreve(msg);
+        }
+
+        function escreve(mensagem){
+            var output = document.querySelector("#output");
+            output.innerHTML = mensagem;
+        }
+
+
+        function novo(){
+            var novo = prompt("Digite um número");
+            novo = parseFloat(novo);
+
+            escreve(novo)
+        }
+
+        function limpar(){
+            n = 0;
+
+            escreve(n)
+        }
+
+        function calcular(simbolo, n1, n2){
+
+            var numeroCalculado = null;
+
+          switch(simbolo){
+              case '+':
+              numeroCalculado = n1 + n2
+              break;
+
+              case '-':
+              numeroCalculado = n1 - n2
+              break;
+
+              case '*':
+              numeroCalculado = n1 * n2
+              break;
+
+              case '/':
+              numeroCalculado = n1 / n2
+          }
+
+          return numeroCalculado;
+
+        }
+
+    </script>
+
+</body>
+</html>
