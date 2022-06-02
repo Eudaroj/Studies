@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio Array</title>
+
+    <style>
+        div{
+            width: 150px;
+            height: 30px;
+            background-color: #ccc;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lógica de Programção JS</h1>
+
+    <div id="output"></div>
+
+
+    <script>
+
+// Exercicio Mostra o dia da Semana
+
+        // let dias = new Array('Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado');
+
+        // let hoje = new Date();
+        
+        // alert('Bem vindo, hoje é ' + dias[hoje.getDay()]);
+
+// Exercicio Mostrar na tela a Soma dos Números Pares.
+        let numeros = new Array(25, 30, 45, 28, 0, 12, 78, 64);
+
+        let output = document.querySelector('#output');
+        
+        let result = somaDosPares(numeros); 
+        
+        output.innerHTML = result;
+
+        function somaDosPares(arr){
+            let soma = 0;
+            
+            for(let i = 0; i < arr.length; i++){
+                if( !isNaN(arr[i]) && arr[i] % 2 === 0){
+                    soma += arr[i];
+                }
+            }
+
+            return soma;
+        }
+
+
+    </script>
+</body>
+</html>
