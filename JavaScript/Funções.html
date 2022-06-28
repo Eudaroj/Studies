@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos e Arrays</title>
+</head>
+<body>
+    <h1>Objects and Arrays</h1>
+
+    <div id="output"></div>
+
+
+    <script>
+        (function(){
+            var alt = parseFloat(prompt("Digite a sua altura"));
+            var peso = parseFloat(prompt("Digite o seu peso"));
+            
+            var /*indice*/result = calcularImc(alt, peso, classificacao);
+
+//primeiramente usei a declaração abaixo para chamar o resultado final proposto, mas  aprendi que também é possivel passar funções como parâmetros já que elas são 'cidadãos de primeira classe'.
+
+//então comentei a linha abaixo e acrecentei a função como parametro na de cima.
+
+            //var resultado = classificacao(indice);
+
+            document.querySelector("#output").innerHTML = "IMC: " + 'indice' + " - Resultado: " + result;
+
+// após realizar o processo percebi que o resultado não era mostrado na div, descobri que a razão é que na declaração acima a variavel 'indice' não existe já que ela existe apenas no escopo da função classificacao. Então da forma que eu gostaria de mostrar o resultado passar a função como parametro não é uma boa escolha já que no final eu teria apenas um resultado.
+
+            function classificacao(indice){
+                var classe = "";
+
+                if(indice <= 16.9){
+                    classe += "muito abaixo do peso";
+                }else if(indice <= 18.4){
+                    classe += "Abaixo do peso";
+                }else if(indice <= 24.9){
+                    classe += "Peso Normal";
+                }else if(indice <= 29.9){
+                    classe += "Acima do peso";
+                }else if(indice <= 34.9){
+                    classe += "Obesidade Grau I";
+                }else if(indice <= 40){
+                    classe += "Obesidade Grau II";
+                }else if(indice > 40){
+                    classe += "Obesidade Grau III";
+                };
+
+                return classe;
+            }
+
+
+            function calcularImc(a, p, callback){
+                var imc = parseInt(p / a ** 2);
+
+                if(callback && typeof callback === 'function'){
+                    return callback(imc);
+                }
+
+                return imc;
+            }
+            
+        })()
+
+    </script>
+    
+</body>
+</html>

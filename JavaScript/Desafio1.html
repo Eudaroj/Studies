@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Teste Hacker com JS</h1>
+    <h2>Paragrafo 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum fuga accusantium laudantium dolore? Exercitationem delectus excepturi facilis similique ipsum recusandae, ex tempora? Numquam hic dolorum eum veniam itaque quis porro.</p>
+    <h2>Paragrafo 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum unde fugit quibusdam magni tempora ab numquam odit nisi incidunt est amet vero nesciunt quaerat quod officiis, modi nostrum pariatur voluptatum.    </p>
+    <h2>Paragrafo 3</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo enim voluptatibus harum illum blanditiis ipsum animi sint. Voluptas illo aspernatur repudiandae labore reprehenderit, molestias necessitatibus, amet eligendi totam inventore quas!</p>
+    <h2>Paragrafo 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora optio minima ab non, dolore nostrum praesentium doloremque culpa, repellat odit necessitatibus, cum beatae deleniti pariatur obcaecati soluta. Eaque, quasi sint?</p>
+
+
+    <script>
+        (function(){
+        var paraList = document.querySelectorAll('p');
+        console.log(paraList);
+
+        for(var i = 0; paraList[i]; i++){
+            var para = paraList[i];
+
+            para.textContent = "Este site foi Hackeado por NeoRock";
+
+            console.log(para);
+        }
+
+
+
+        })()
+
+    </script>
+</body>
+</html>
