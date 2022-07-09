@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Aprendendo como funcionam Objetos</h1>
+
+
+    
+    <script>
+        let pessoa1 = {
+            nome: 'Junior',
+            sobrenome: 'Rocha'
+        };
+
+        let pessoa2 = {
+            nome: 'Rafaella',
+            sobrenome: 'Rocha'
+        };
+
+        let pessoa3 = {
+            nome: 'Benjamin',
+            sobrenome: 'Rocha'
+        };
+
+        let pessoas = [
+            pessoa1,
+            pessoa2,
+            pessoa3
+        ]
+
+        let x = 0;
+        while(pessoas[x]){
+            console.log(pessoas[x].nome + ' ' + pessoas[x].sobrenome)
+            x++;
+        }
+    </script>
+
+</body>
+
+</html>
