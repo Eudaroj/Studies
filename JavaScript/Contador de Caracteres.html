@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+</head>
+<body>
+    <h1>Contador de Caracteres</h1>
+
+    <textarea name="mensagem" id="msg" cols="50" rows="10" maxlength="100"></textarea>
+
+    <div>Restam <span id="resta"></span> Caracteres </div>
+    
+    <script>
+        let $msg = document.getElementById('msg')
+        let $rst = document.getElementById('resta')
+        let max = $msg.maxLength
+
+        $rst.textContent = max
+
+        $msg.addEventListener('input', checkLength)
+
+        function checkLength(e){
+            let digitados = $msg.value.length
+            $rst.textContent = max - digitados
+        }
+
+
+    </script>
+
+
+</body>
+</html>
