@@ -52,9 +52,43 @@ function exSome(){
 }
 
 function exFilter(){
-    
+// Retorna um outro array contento apenas os elementos que retornarem true para o filtro.
+// também recebe uma função como parâmetro(elemento, indice e objeto).
+    let arr = ['junior', 1, 2, 'rafaella', 4, 'benjamin']
+    let numeros = arr.filter(function(el){
+        return typeof el === 'number'
+    })
+    console.log(numeros) // = (3) [1, 2, 4]
+//Aqui o filter retorna um outro array contente apenas os elementos que são numeros (que retornaram true no filtro 'number').
 }
 
+function exForEach(){
+// É um método que executa um loop sem usar o for, while. Ele executa a função passada por parâmetro em cada item do array.
+    let arr = [1, 2, 3, 4]
+    arr.forEach(function(el, i, arr){
+        console.log('el=', el,' | i=', i, ' | arr - ', arr.toSrting())
+    })
+
+// console.log =
+/*  el = 1 | i = 0 | arr - 1, 2, 3, 4
+    el = 2 | i = 1 | arr - 1, 2, 3, 4
+    el = 3 | i = 2 | arr - 1, 2, 3, 4
+    el = 4 | i = 3 | arr - 1, 2, 3, 4 */
+
+}
+
+function exIndexOfeLastIndexOf(){
+// Esse método funciona da mesma forma que o metodo para strings.
+// retornam a primeira posição do elemento buscado dentro do array.
+    let arr = ['a', 1,'a', 2, 'b', 4, 'b']
+    let posicao1 = arr.indexOf('b'/*, 5 */ ) // também podemos passar um segundo parâmetro nesse método, sendo esse número o indice pelo qual seria iniciado a busca. neste casa seria feita apartir do indice 2, não buscando no 0 e no 1.
+    console.log(posicao1) // = 4 | com o segundo parâmetro retornaria = 6
+
+    let posicao2 = arr.lastIndexOf('a'/*, 2*/)
+    console.log(posicao2) // = 5 | com o segundo parâmetro retornaria = 1
+// com 'lastIndexOf' a busca começa a ser feita do ultimo indice até o primeiro, retornando a primeira ocorrência encontrada.
+//também recebe um segundo parâmetro, sendo o indice pelo qual queremos começar a busca.
+}
 
     </script>
 
