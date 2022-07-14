@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .done{
+            text-decoration: line-through;
+            color: #666;
+        }
+
+        span{
+            color: red;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <h1>Lista de Tarefas a fazer</h1>
+
+    <input type="text" id="txtTask">
+    <button id="btn">Cadastrar Tarefa</button>
+
+    <ul>
+        <li>Estudar Javascript - DOM <span>X</span></li>
+        <li>Estudas Eventos em JS <span>X</span></li>
+        <li>Jogar <span>X</span></li>
+    </ul>
+
+    <script>
+//Primeira Versão - add Task apenas ao Clicar no botão
+    /*(function(){
+        'use strict'
+
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+
+        $btn.addEventListener('click', function(){
+            let task = '<li>' + $txtTask.value + '</li>'
+            $ul.innerHTML += task
+
+            $txtTask.value = ''
+            $txtTask.focus()
+        })
+
+    })()*/
+
+// Segunda Versão - Add tarefas com Enter
+   /* (function(){
+        'use strict'
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function(e){
+            console.log(e.KeyCode)
+            if(e.which === 13){
+                addTask()
+            }
+        })
+
+        function addTask(){
+            let task = '<li>' + $txtTask.value + '</li>'
+            $ul.innerHTML += task
+
+            $txtTask.value = ''
+            $txtTask.focus()
+        }
+    })()*/
+
+//Terceira Versão - Check de Tarefas Realizadas (funciona até add outra tarefa - problema de DOM)
+    /*(function(){
+        'use strict'
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+        let $lis = $ul.querySelectorAll('li')
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function(e){
+            if(e.which === 13){
+                addTask()
+            }
+        })
+
+        for(let i = 0; i < $lis.length; i++){
+            $lis[i].addEventListener('click', toggleDone)
+        }
+
+        function toggleDone(){
+            this.classList.toggle('done')
+        }
+
+
+        function addTask(){
+            let task = '<li>' + $txtTask.value + '</li>'
+            $ul.innerHTML += task
+
+            $txtTask.value = ''
+            $txtTask.focus()
+        }
+    })()*/
+
+//Quarta Versão - Check de Tarefas Realizadas (resolvendo problema de DOM criado pelo innerHTML) - O innerHTML aparentemente substitui o conteudo em questão, mesmo que seja pelo mesmo conteudo. Resultando em um problema de DOM, onde, neste caso, as 'lis' são substituidas, quando é add uma nova, perdendo a referência de DOM criada no ínicio do código.
+    /*(function(){
+        'use strict'
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+        let $lis = $ul.querySelectorAll('li')
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function(e){
+            if(e.which === 13){
+                addTask()
+            }
+        })
+
+        for(let i = 0; i < $lis.length; i++){
+            addEvent($lis[i])
+        }
+
+        function toggleDone(){
+            this.classList.toggle('done')
+        }
+
+
+        function addTask(){
+            let li = document.createElement('li')
+            let text = document.createTextNode($txtTask.value)
+
+            li.appendChild(text)
+            $ul.appendChild(li)
+
+
+            $txtTask.value = ''
+            $txtTask.focus()
+
+            addEvent(li)
+        }
+
+        function addEvent(li){
+            li.addEventListener('click', toggleDone)
+        }
+    })()*/
+
+//Quinta Versão - Removendo excesso de Eventos dependendo da quantidade de 'lis'
+    /*(function(){
+        'use strict'
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+        let $lis = $ul.querySelectorAll('li')
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function(e){
+            if(e.which === 13){
+                addTask()
+            }
+        })
+
+        $ul.addEventListener('click', function(e){
+            if(e.target.nodeName === 'li'){
+                toggleDone(e.target)
+            }
+        })
+
+        function toggleDone(li){
+            li.classList.toggle('done')
+        }
+
+
+        function addTask(){
+            let li = document.createElement('li')
+            let text = document.createTextNode($txtTask.value)
+
+            li.appendChild(text)
+            $ul.appendChild(li)
+
+
+            $txtTask.value = ''
+            $txtTask.focus()
+        }
+    })()*/
+
+//Sexta Versão - Add recurso para excluir tarefaz realizadas.
+    (function(){
+        'use strict'
+        let $txtTask = document.querySelector('#txtTask')
+        let $btn = document.querySelector('#btn')
+        let $ul = document.querySelector('ul')
+        let $lis = $ul.querySelectorAll('li')
+        let $ex = $ul.querySelectorAll('span')
+
+        $btn.addEventListener('click', addTask)
+        $txtTask.addEventListener('keyup', function(e){
+            if(e.which === 13){
+                addTask()
+            }
+        })
+
+
+
+        $ul.addEventListener('click', function(e){
+            if(e.target.nodeName === 'li'){
+                toggleDone(e.target)
+            }if(e.target.nodeName === 'span'){
+                removeTask(e.target.parentNode)
+            }
+        })
+
+        function toggleDone(li){
+            li.classList.toggle('done')
+
+        }
+
+        function removeTask(span){
+            if(confirm('Deseja realmente excluir a tarefa: /n' + span.parentNode.textConte + '?')){
+
+            }
+        }
+
+        function addTask(){
+            let li = document.createElement('li')
+            let text = document.createTextNode($txtTask.value)
+
+            li.appendChild(text)
+            $ul.appendChild(li)
+
+
+            $txtTask.value = ''
+            $txtTask.focus()
+        }
+    })()
+
+    </script>
+</body>
+</html>

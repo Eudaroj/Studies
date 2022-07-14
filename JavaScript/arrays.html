@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>javaScript - Métodos de Arrays</h1>
+
+    <script>
+function exIndices(){
+// Os elementos dentro de um Array sempre são contados começando pelo número 0. Sendo assim:
+        let arr = [1, 2, 3, 4, 5]
+        //índices= 0  1  2  3  4
+    }
+    
+function exLength(){
+// length - retorna a quantidade de elementos dentro do objeto.
+        let arr = [1, 2, 3, 4, 5]
+        console.log(arr.length) // = 5
+    }
+    
+function exEvery(){
+// every() -  retorna um booleano se TODOS os índice do array passarem por uma verificação.
+//            Recebe por parâmetro uma função responsável por fazer um teste em cada um dos elementos e retornar True, se todos os elementos forem true ou False se pelo menos um dos elementos for false.
+        let arr = [1, 2, 3, 4, 5]
+        arr.every(function (elemento, indice, objeto){})
+//  essa função pode receber três parâmetros, o 'elemento' é obrigatório, os outros dois são opcionais.
+
+//  elemento - é exatamento o valor de cada elemento 1, 2, 3, 4 ou 5.
+//  indice - é a posição de cada elemento dentro do array. Ex: o elemento 1 tem indice 0 e o elemento 4 tem indice 3. (ver linha 13)
+//  objeto - é uma cópia do próprio array. neste caso: (5) [1, 2, 3, 4, 5]
+
+// Exemplo - Verificar se só existem números dentro do array (linha 28)
+        let soNumeros = arr.every(function(el){
+            return typeof el === 'number'
+        })
+        console.log(soNumeros) // = true
+        // Neste caso, essa função reotornaria true já que todos os elementos são números. Se por acaso tivessemos (let array = ['junior', 1, 2, 3]) a função retornaria false já que existem uma string no índice 0.
+    }
+
+function exSome(){
+// arr.some() - segue o mesmo raciocínio do .every() mas retorna true se PELO MENOS UM dos elementos retorna true durante a verificação.
+// sendo assim:
+        let arr = ['junior', 1, 2]
+        let peloMenosUm = arr.some(function(el){
+            return typeof el === 'number'
+        })
+        console.log(peloMenosUm) // = true
+        //Aqui memso o array contento uma string, o método some retorna true já que a sua condição é que exista pelo menos um elemento verdadeiro na verificação.
+}
+
+function exFilter(){
+    
+}
+
+
+    </script>
+
+
+</body>
+</html>
