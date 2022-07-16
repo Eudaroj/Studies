@@ -66,7 +66,7 @@ function exForEach(){
 // É um método que executa um loop sem usar o for, while. Ele executa a função passada por parâmetro em cada item do array.
     let arr = [1, 2, 3, 4]
     arr.forEach(function(el, i, arr){
-        console.log('el=', el,' | i=', i, ' | arr - ', arr.toSrting())
+        console.log('el=', el,' | i=', i, ' | arr - ', arr.toString())
     })
 
 // console.log =
@@ -85,10 +85,42 @@ function exIndexOfeLastIndexOf(){
     console.log(posicao1) // = 4 | com o segundo parâmetro retornaria = 6
 
     let posicao2 = arr.lastIndexOf('a'/*, 2*/)
-    console.log(posicao2) // = 5 | com o segundo parâmetro retornaria = 1
+    console.log(posicao2) // = 2 | com o segundo parâmetro retornaria = 1
 // com 'lastIndexOf' a busca começa a ser feita do ultimo indice até o primeiro, retornando a primeira ocorrência encontrada.
 //também recebe um segundo parâmetro, sendo o indice pelo qual queremos começar a busca.
 }
+
+function exMap(){
+// Interage com cada um dos elementos e faz uma alteração em cada um retornando o novo valor para a mesma posição.
+    let arr = [10, 4, 6, 9, 3]
+    arr = arr.map(function(el, i){
+        return el * i
+    })
+    console.log(arr) // = [0, 4, 12, 27, 12]
+}
+ function exConcat(){
+// Serve para juntar arrays, com outras arrays e com outros elementos desejado (strings, números). Pode receber arrays, strings e números de uma vez só e retornará um novo array com todos os elementos.
+    let mix = ['junior', 5, 9]
+    let numeros = [8, 4, 2]
+    let strings = ['olá', 'mundo']
+
+    let concat = mix.concat(numeros, strings, 'novaString', 35)
+    console.log(concat) // = ['junior', 5, 9, 8, 4, 2, 'olá', 'mundo', 'novaString', 35] (nova array)
+ }
+
+function exJoin(){
+// join serve para transformar um array em uma string. semelhante ao método 'toString()', mas no caso do 'join()' é possivel passar um elemento separador por parâmento diferente da vírgula (que é o padrão).
+    let arr = [1, 'olá', 5, 8, 'Mundo', 25]
+
+    let padrao = arr.join()
+    console.log(padrao)
+
+    let diferente = arr.join(' -- ')
+    console.log(diferente)
+
+
+}
+
 
     </script>
 
