@@ -117,10 +117,121 @@ function exJoin(){
 
     let diferente = arr.join(' -- ')
     console.log(diferente)
+}
 
+function exReduce(){
+// Esse método retorna a soma dos elementos dentro do array, sem a necessidade de um loop explicito.
+    let arr = [8, 4, 13, 27, 3]
+// O 1º parâmetro do reduce é uma função, na qual: 
+    // o primeiro parâmetro é o valor antes da soma no loop de cada elemento.
+    // o segundo é o valor do proximo elemento.
+    // a soma dos dois é o número que se torna o argumento do parametro 'anterior' no próximo loop.
+
+console.log('----------') 
+
+    let somaDoArr = arr.reduce(function(anterior, atual){
+        console.log('anterior: ' + anterior + ' | atual: ' + atual + ' | soma: ' + (anterior+atual))
+        return anterior + atual
+    },/*10*/)
+    console.log(arr)
+    console.log(somaDoArr)
+
+// o reduce() pode receber um segundo parâmetro que é um número inicial da soma antes de qualquer interação com os elementos.
+
+console.log('----------') 
+
+// também funciona com strings
+    let arrString = ['olá ', 'Mundo ', 'Bem ', 'Vindo ']
+    let somaString = arrString.reduce(function(i, a){
+        console.log('anterio: ' + i + ' | atual: ' + a + ' | soma: ' + (i+a))
+        return i + a
+    })
+    console.log(somaString)
+
+console.log('----------') 
+
+// reduceRight() - forma para iniciar a soma da direita para a esquerda.
+let reduceRight = arrString.reduceRight(function(i, a){
+        console.log('anterior: ' + i + ' | atual: ' + a + ' | soma: ' + (i+a))
+        return i + a
+    })
+    console.log(reduceRight)
 
 }
 
+function exSlice(){
+// retorna uma parte do array conforme solicitado pelos argumentos
+    let arr = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    let novoSlice = arr.slice(2) // passando apenhas 1 argumento o slice vai até o final do array (posição length-1). aqui o '2' é a posição e não o indice, e a posição inicial não é contadada o slice começa a partir (no proximo elemento) dele.
+    console.log(novoSlice) // = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    let outroSlice = arr.slice(2, 6) //passando 2 argumentos o slice começa apartir do 2 (no 3º) e inclui o ultimo.
+    console.log(outroSlice) // = [2, 3, 4, 5]
+}
+
+
+
+
+// Os métodos anteriores não alteram o array principal, retornando um novo array com a solicitação do método.
+// Os próximos métodos são métodos destrutivos, uma vez que a sua utilização altere o array original ao qual está destinado.
+
+function exDestrutivos(){
+    let arr = [5, 10, 2]
+    console.log('Original: ')
+    console.log(arr)
+// push() - adiciona um novo elemento como último índice do array.
+    let push = arr.push('novo', 'push')
+    console.log('Método push: ')
+    console.log(push) // o retorno desse método é o novo LENGTH do array, sendo assim o que está armazenado na variavel push é o número 5.
+    console.log('Array depois do push: ')
+    console.log(arr)
+
+// pop() - Remove (modificando o original) o último elemento do array e retorna-o para quem o chamou. 
+    let ultimoItem = arr.pop()
+    console.log('pop(remove último elemento): ')
+    console.log(ultimoItem)
+    console.log('Array depois do pop: ')
+    console.log(arr)
+
+// shift() - semelhante ao pop, mas ao invés de remover o último ele vai remover o primeiro elemento do array.
+    let primeiroItem = arr.shift()
+    console.log('shift(remove primeiro elemento): ')
+    console.log(primeiroItem)
+    console.log('Array depois do shift: ')
+    console.log(arr)
+
+// unshift() - semelhante ao push(), mas acrescenta um elemento no ínicio do array.
+    let unshift = arr.unshift('novo', 'unshift')
+    console.log('Método unshift: ')
+    console.log(unshift) // também retorno e armazena o novo LENGTH do array.
+    console.log('Array depois do unshift: ')
+    console.log(arr)
+}
+
+function exReverse(){
+// Inverte o array, o ultimo elemento se torna o primeiro e o primeiro o ultimo.
+    let arr = [1, 2, 3, 4, 5]
+    let newArray = arr.reverse()
+    console.log(arr)
+    console.log(newArray)
+// como podemos ver nos console.log's mesmo criando uma nova variavel para armazenar o reverse, esse método sempre modifica o array original.
+}
+
+function exSplice(){
+// incluir e excluir elementos em qualquer posição do array.
+// esse método recebe 3 argumentos:
+// 1º - é a posição onde ele deve iniciar a modificação
+// 2º - é o numéro de elementos que ele deve excluir (0 se não quiser excluir itens).
+// 3º - a partir daqui são os elementos que devem ser incluidos no array original (podendo ser quantos quiser).
+
+    let arr = [10, 5, 16, 21, 8]
+    let splice = arr.splice(2, 0, 'splice')
+    console.log(arr)
+    console.log(splice)
+
+// esse método retorna os itens excluidos e modifica o array original.
+
+}
 
     </script>
 
