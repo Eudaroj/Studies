@@ -32,7 +32,7 @@ function exEvery(){
 //  indice - é a posição de cada elemento dentro do array. Ex: o elemento 1 tem indice 0 e o elemento 4 tem indice 3. (ver linha 13)
 //  objeto - é uma cópia do próprio array. neste caso: (5) [1, 2, 3, 4, 5]
 
-// Exemplo - Verificar se só existem números dentro do array (linha 28)
+// Exemplo - Verificar se só existem números dentro do array (linha 27)
         let soNumeros = arr.every(function(el){
             return typeof el === 'number'
         })
@@ -52,7 +52,7 @@ function exSome(){
 }
 
 function exFilter(){
-// Retorna um outro array contento apenas os elementos que retornarem true para o filtro.
+// arr.filter() - Retorna um outro array contento apenas os elementos que retornarem true para o filtro.
 // também recebe uma função como parâmetro(elemento, indice e objeto).
     let arr = ['junior', 1, 2, 'rafaella', 4, 'benjamin']
     let numeros = arr.filter(function(el){
@@ -63,7 +63,7 @@ function exFilter(){
 }
 
 function exForEach(){
-// É um método que executa um loop sem usar o for, while. Ele executa a função passada por parâmetro em cada item do array.
+// arr.forEach() -  É um método que executa um loop sem usar o for, while. Ele executa a função passada por parâmetro em cada item do array.
     let arr = [1, 2, 3, 4]
     arr.forEach(function(el, i, arr){
         console.log('el=', el,' | i=', i, ' | arr - ', arr.toString())

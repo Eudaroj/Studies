@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <h1>Aprendendo como funcionam Objetos</h1>
+    <h1>Arrays e Metódos</h1>
 
     <section>
         <h2>Boletins</h2>
@@ -25,7 +25,7 @@
                 <tr class="aluno">
                     <td class="nome">Junior</td>
                     <td class="nota_1">8.5</td>
-                    <td class="nota_2">9.0</td>
+                    <td class="nota_2">0</td>
                     <td class="nota_3">7.5</td>
                     <td class="nota_4">6.0</td>
                     <td class="media"></td>
@@ -34,7 +34,7 @@
                     <td class="nome">Rafaella</td>
                     <td class="nota_1">8.5</td>
                     <td class="nota_2">9.0</td>
-                    <td class="nota_3">7.5</td>
+                    <td class="nota_3">0</td>
                     <td class="nota_4">10.0</td>
                     <td class="media"></td>
                 </tr>
@@ -43,7 +43,7 @@
                     <td class="nota_1">8.5</td>
                     <td class="nota_2">9.0</td>
                     <td class="nota_3">7.5</td>
-                    <td class="nota_4">9,5</td>
+                    <td class="nota_4">9.5</td>
                     <td class="media"></td>
                 </tr>
             </tbody>
@@ -51,19 +51,48 @@
     </section>
 
 
-    <script src="function.js"></script>
+    <script src="Function.js"></script>
     <script>
-    let trs = document.querySelectorAll('.aluno')
-    console.log(trs)
-    
-    let i = 0
-    while(trs[i]){
-        let linhaAluno = trs[i]
-        console.log(linhaAluno)
+        let trs = document.querySelectorAll('.js-tabela tbody .aluno');
         
-        i++
-    }
+        let i = 0;
+        while (trs[i]){
+            let linhaAluno = trs[i];
+            let tds = linhaAluno.querySelectorAll("td");
+            let notas = recuperarNumerosEmColunas(tds)
+            let verificar = notas.some(function(nota){
+                return nota == 0
+            })
 
+            // if(verificar){
+            //     var media = "Reprovado";
+            // }else{        
+            //     var media = calcularMedia.apply(this,notas);
+            // }
+
+        // podemos escrever a mesma coisa do 'if/esle' de cima com os operadores ternários. Assim:
+            
+            let media = verificar ? 'Reprovado' : calcularMedia.apply(this, notas)
+
+
+            linhaAluno.querySelector('.media').textContent = media;
+
+            i++;
+        }
+
+        function recuperarNumerosEmColunas(tds){
+            let x = 0
+            let numeros = []
+            while(tds[x]){
+                if( !isNaN( tds[x].textContent) && tds[x].textContent !== ''){
+                    numeros.push(parseFloat(tds[x].textContent))
+                }
+                x++
+            }
+            console.log('--------------------')
+            console.log(numeros)
+            return numeros
+        }
     </script>
 
 </body>
