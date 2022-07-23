@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Funções</h1>
+
+
+    <script src="Function.js"></script>
+    <script>
+
+function exArrowFunctions(){
+// Arrow Function - é uma maneira simplificada, mais rápida e limpa de escrever funções.
+    let arr = [3, 'junior', 8, 'Rafaella', 43, 'Benjamin', 25]
+
+    let normal = arr.filter(function(el){
+        return typeof el === 'number'
+    })
+    console.log('Normal: ' + normal)
+// Nela não precisamos da palavra function e trocamos ela por uma seta (=>)
+    let arrow1 = arr.filter((el) => {
+        return typeof el === 'number'
+    })
+    console.log('Arrow1: ' + arrow1)
+//Se temos apenas 1 parâmetro, podemos reduzir mais retirando os parênteses:
+     let arrow2 = arr.filter(el => {
+        return typeof el === 'number'
+    })
+    console.log('Arrow2: ' + arrow2)
+//Se a função tiver apenas uma linha no seu escobo, também podemos retirar as chaves (e podemos trazer para uma única linha) e se não estamos usando cahves temos que retirar o 'return'(deixa-lo geraria um erro)):
+    let arrow3 = arr.filter(el => typeof el === 'number')
+    console.log('Arrow3: ' + arrow3)
+
+/* Então isso aqui:
+            let normal = arr.filter(function(el){
+                return typeof el === 'number'
+            })
+            
+    É igual a isso aqui:
+            let arrow3 = arr.filter(el => typeof el === 'number')
+*/
+}
+
+
+    </script>
+
+</body>
+
+</html>

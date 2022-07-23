@@ -8,7 +8,9 @@
 <body>
     <h1>javaScript - Métodos de Arrays</h1>
 
+    <script src="Function.js"></script>
     <script>
+
 function exIndices(){
 // Os elementos dentro de um Array sempre são contados começando pelo número 0. Sendo assim:
         let arr = [1, 2, 3, 4, 5]
@@ -169,6 +171,13 @@ function exSlice(){
     console.log(outroSlice) // = [2, 3, 4, 5]
 }
 
+function exSplit(){
+//retorna uma array contendo elementos que foram separados pelo argumento passado.
+    let msg = 'Texto exemplo do método split, com um espçao por argumento.'
+    let arr = msg.split(' ')
+    console.log(arr) // = (10) ['Texto', 'exemplo', 'do', 'método', 'split,', 'com', 'um', 'espçao', 'por', 'argumento.']
+}
+
 
 
 
@@ -230,8 +239,30 @@ function exSplice(){
     console.log(splice)
 
 // esse método retorna os itens excluidos e modifica o array original.
-
 }
+
+
+function exArraysPorArgumentos(){
+// Arrays passados como argumentos são um unico elemento, independente de quantos elementos existam dentro do array.
+    let arr = [2, 3]
+// Então se fizermos isso:
+    let media = calcularMedia(2, 3)
+    console.log(media) // = '2,50'
+// Mas, se fizermos isso:
+    let mediaComArray = calcularMedia(arr)
+    console.log(mediaComArray) // = 0
+
+// A media retorna 0, porque o array é entendido como um único elemento sem um valor especifico. Então como podemos fazer para que o array seja separado e entendido como elementos separados?
+
+// O Aplly()
+    let apply = calcularMedia.apply(this, arr)
+    console.log(apply) // = 2.50
+
+// O Spread
+    let spread = calcularMedia(...arr)
+    console.log(spread) // = 2.50
+}
+
 
     </script>
 

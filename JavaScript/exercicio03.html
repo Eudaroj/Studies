@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .destaque{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript</h1>
+    <h2>Se o parágrafo tiver mais que 10 palavras, mostrar apenas as 10 seguidas de reticencias</h2>
+    <h2>Paragrafo 1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum fuga accusantium laudantium dolore? Exercitationem delectus excepturi facilis similique ipsum recusandae, ex tempora? Numquam hic dolorum eum veniam itaque quis porro.</p>
+    <h2>Paragrafo 2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum unde fugit quibusdam magni tempora ab numquam odit nisi incidunt est amet JAVASCRIPT nesciunt quaerat quod officiis, modi nostrum pariatur voluptatum.    </p>
+    <h2>Paragrafo 3</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo enim voluptatibus harum illum blanditiis ipsum animi sint. Voluptas illo aspernatur repudiandae labore reprehenderit, molestias necessitatibus, amet eligendi totam inventore quas!</p>
+    <h2>Paragrafo 4</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora optio minima ab non, dolore nostrum praesentium doloremque culpa, repellat odit necessitatibus, cum beatae deleniti pariatur obcaecati soluta. Eaque, quasi sint?</p>
+
+
+    <script>
+        (function(){
+            let paragrafos = document.querySelectorAll('p')
+
+            for(let i = 0; i < paragrafos.length; i++){
+                let temJS = paragrafos[i].textContent.toLowerCase().indexOf('javascript') >= 0
+                paragrafos[i].className = temJS ? 'destaque' : ''
+            }
+
+ 
+        })()
+
+    </script>
+</body>
+</html>
