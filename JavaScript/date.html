@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Date - Objeto Construtor</h1>
+
+    </div>   
+
+    <script>
+// O objeto Date é um objeto construtor para criar objetos do tipo data. 
+
+function exDate(){
+// Um objeto do tipo date precisa ser instanciado, quer dizer é necessário a utilização do operador new para criar um novo objeto desse tipo.
+    let minhaData = new Date()
+    console.log(minhaData) // Tue Jul 26 2022 09:22:00 GMT-0300 (Horário Padrão de Brasília)
+
+// getDay() retorna o dia da semana. Sendo domingo -> 0 e sábado -> 6
+    minhaData.getDay() // 2
+
+// getDate() retorna apenas o dia do mês em questão.
+    minhaData.getDate() // 26
+
+// getMonth() retorna o mês em indices. Janeiro = 0 e dezembro = 11
+    minhaData.getMonth() // 6
+
+// getYear() (ATENÇÂO) esse método retorna o número de anos passados depois de 1900
+    minhaData.getYear() // 122
+
+// getFullYear() retorna o ano padrão como conhecemos.
+    minhaData.getFullYear() // 2022
+
+// IMPORTANTE - os retornos desses métodos são retornos do momento em que o objeto foi instanciado e não do momento atual. Então, por exemplo, os minutos e segundos não mudarão independente do momento em que chamamos.
+
+// getHours() retorna a hora
+    minhaData.getHours() // 09
+
+// getMinutes() retorna os minutos
+    minhaData.getMinutes() // 22
+
+// getSeconds() retorna os segundos
+    minhaData.getSeconds() // 00
+
+// getTime() retorna o time Stamping, que é o número de milisegundos passados desde do Unix Time (que é 00:00:00 UTC on 1 January 1970).
+    minhaData.getTime() // 1658838120930
+
+//Esse é um tipo de data unica e igual em todos os lugares do mundo independente do fuso horário.
+// um ATALHO para o timeStamping é '+new Date()'. Esse atalho retorna o time Stamp do horário atual do disposito.
+
+
+// setTime() é um método para definir uma data a partir do Unix Time.
+    minhaData.setTime(0) // 0 milisegundos do horário original
+    console.log(minhaData) // Wed Dec 31 1969 21:00:00 GMT-0300 (Horário Padrão de Brasília) {}
+
+// a data retorna para 1969 por conta do fuso horário em questão.
+
+// setDate() altera o dia da data definida anteriormente.
+    minhaData.setDate(20)
+    console.log(minhaData) // Wed Dec 20 1969 21:00:00 GMT-0300 (Horário Padrão de Brasília) {}
+
+// setMonth() altera o mês.
+    minhaData.setMonth(5)
+    console.log(minhaData) // Wed Junho 20 1969 21:00:00 GMT-0300 (Horário Padrão de Brasília) {
+
+// setYear() altera o ano.
+        minhaData.setYear(2022)
+        console.log(minhaData) // Wed Dec 20 2022 21:00:00 GMT-0300 (Horário Padrão de Brasília) {}
+
+// setHours()
+// setMinutes()
+// setMiliseconds()
+
+// o new Date() também pode ser criado passando argumentos, para criar um objeto em uma data especifica.
+        minhaOutraData = new Date(2018, 11, 02, 10, 13, 30, 500)
+        // (ano, mês, dia, hora, minuto, segundo, milisegundo)
+        console.log(minhaOutraData)
+
+}
+
+
+    </script>
+
+
+</body>
+</html>
