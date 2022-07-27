@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript - Datas</h1>
+    <div id="nascimento"></div>
+    <div id="proximo"></div>
+
+
+    <script>
+        let dia = prompt('dia de nascimento')
+        let mes = prompt('Mês de nascimento')
+        let ano = prompt("Ano de Nascimento")
+
+        let dataAtual = new Date()
+        dataAtual.setHours(0)
+        dataAtual.setMinutes(0)
+        dataAtual.setSeconds(0)
+        dataAtual.setMilliseconds(0)
+        let anoAtual = dataAtual.getFullYear()
+        
+        let dataNascimento = document.querySelector('#nascimento')
+        let proxAniversario = document.querySelector('#proximo')
+
+        dataNascimento.innerHTML = 'Data de Nascimento: ' + dia + '/' + mes + '/' + ano
+        
+        let niver = new Date(anoAtual, mes-1, dia)
+        console.log(niver)
+
+        let dataAtualTS = dataAtual.getTime()
+        let dataNiverTS = niver.getTime()
+
+        if(dataNiverTS === dataAtualTS){
+            alert('Hoje é o seu aniversário, Parabéns')
+        }
+        if(dataNiverTS < dataAtualTS){
+            niver.setFullYear(++anoAtual)
+            dataNiverTS = niver.getTime()
+        }
+
+        const umDia = 24*60*60*1000
+        let diferenca = dataNiverTS - dataAtualTS
+
+        proxAniversario.innerHTML = 'Faltam ' + diferenca/umDia + ' dias para o seu aniversário.'
+    </script>
+</body>
+</html>
