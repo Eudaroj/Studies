@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript - Temporizadores</h1>
+
+
+    <script>
+    let n = 0
+    function timeout(){
+        console.log('Olá depois de 5s')
+    }
+
+    function contador(){
+        console.log(++n)
+
+        if(n >= 5){
+            clearInterval
+        }
+    }
+// ------  Timeout  -------
+// Serve para executar uma ação em um determinado tempo depois do carregamento da página.
+
+// setTimeout(fn, ms) - usamos essa sintaxe para defino-lo.
+//      Ela recebe uma função como primeiro argumento e o segundo é tempo, em milisegundos, para que ocorra a ação.
+// clearTimeout(id) - e essa para limpar o Timeout definido.
+//      aqui ela recebe o id definido em um setTimeout()
+    setTimeout(timeout, 5000)
+
+// ----- Interval -----
+// Cria um intervalo de tempo para que uma função seja executada repetidamente no tempo definido.
+
+// setInterval(fn, ms) - Recebe uma função e o tempo de repetição em milisegundos.
+// clearInterval(id) - limpa o intervalo definido no id recebido.
+    setInterval(contador, 1000)
+
+
+
+    </script>
+    
+</body>
+</html>
