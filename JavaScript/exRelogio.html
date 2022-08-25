@@ -44,6 +44,10 @@
             width: 10em;
             height: 10em;
             margin: 40px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
         }
 
         footer{
@@ -67,11 +71,32 @@
     </header>
     <section>
         <div id="msg">São 15:54</div>
-        <div id="img">Div2</div>
+        <div id="img"><p>Div2</p></div>
     </section>
     <footer>
         <p>&copy; Junior Rocha Developer 2022</p>
     </footer>
+
+    <script>
+        var msg = document.getElementById('msg')
+        var img = document.getElementById('img')
+        var data = new Date()
+        var h = data.getHours()
+        var m = data.getMinutes()
+
+        msg.innerHTML='São ' + h + ':' + m
+
+        if(h >= 5 && h < 12){
+            document.body.style.background = '#e2cd9f'
+            img.innerHTML = 'Bom Dia!'
+        } else if(h >= 12 && h < 18){
+            document.body.style.background = '#b9846f'
+            img.innerHTML = 'Boa Tarde!'
+        } else if(h >= 18 || h < 5){
+            document.body.style.background = '#515154'
+            img.innerHTML = 'Boa Noite!'
+        }
+    </script>
     
 </body>
 </html>
