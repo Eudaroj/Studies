@@ -1,0 +1,194 @@
+body{
+    background-color: #f7f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Formulário */
+header{
+    margin: 40px 150px 100px 150px;
+    background-color: #18a999;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: #484349 0px 0px 50px;
+}
+
+#titulo-formulario{
+    text-align: center;
+    line-height: 20px;
+    color: #f7f0f0;
+}
+
+#formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    background-color:#f7f0f0;
+    border: solid 4px #109648 ;
+    box-shadow: #484349 -5px 5px 20px;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#formulario div{
+    display: flex;
+    justify-content: space-between;
+}
+
+#formulario div label{
+    border-bottom: solid 2px #18a999;
+    width: 350px;
+}
+
+#formulario input, #formulario select{
+    width: 300px;
+}
+
+#formulario button{
+    width: 200px;
+    height: 30px;
+    background-color: #109648;
+    border: solid 2px #109648;
+    border-radius: 5px;
+    color: #f7f0f0;
+    box-shadow: #484349 -2px 2px 5px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+/* Estilização Geral de Todas as Folhas */
+main{
+    font-family: 'Times New Roman', Times, serif;
+    width: 21cm;
+    margin: auto;
+    padding: 0 2cm;
+    text-align: justify;
+    background-color: #fff;
+}
+
+.altura-a4{
+    height: 29.7cm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.corpo-texto{
+    margin: 0 1.5cm;
+}
+
+.caixa-alta{
+    text-transform: uppercase;
+} 
+
+.sublinhado{
+    text-decoration: underline;
+}
+
+.negrito{
+    font-weight: 800;
+}
+
+.recuo{
+    text-indent: 1.5cm;
+}
+
+.centralizado{
+    text-align: center;
+}
+
+.sublinhado-ass{
+    width: 450px;
+    border-bottom: solid 2px #000;
+    display: block;
+    margin: auto;
+}
+
+main img{
+    width: 100%;
+}
+
+.img-cabecalho{
+    margin: 20px 0;
+    height: 135px;
+}
+
+.img-rodape{
+    margin: 20px 0;
+    height: 75px;
+}
+
+
+/* Estilização Folha Um */
+#cabecalho-memorando{
+    display: flex;
+    justify-content: space-between;
+}
+
+#cabecalho-texto{
+    line-height: 7px;
+}
+
+
+#tabela-memorando{
+    border: #484349 solid 2px;
+}
+
+#tabela-memorando tr td{
+    border: #484349 solid 2px;
+    padding: 0 10px;
+}
+
+#tabela-memorando table tr td:first-child{
+    width: 200px;
+}
+
+#tabela-memorando table tr td:nth-child(2){
+    width: 550px;
+    font-weight: 800;
+}
+
+#tabela-memorando table tr td:only-child{
+    padding: 5px;
+}
+
+.assinatura{
+    line-height: 2px;
+    height: 120px;
+}
+
+.assinatura p{
+    display: block;
+    margin-bottom: -60px;
+}
+
+/* Estilização Folha dois */
+#tabela-autorizacao{
+    border-collapse: collapse;
+    margin: 40px auto;
+}
+
+#tabela-autorizacao tr td{
+    border: #484349 solid 2px;
+}
+
+#tabela-autorizacao tr{
+    height: 40px;
+}
+
+#tabela-autorizacao tr td:first-child{
+    width: 80px;
+}
+
+#tabela-autorizacao tr td:nth-child(2), #tabela-autorizacao tr td:nth-child(3){
+    width: 300px;
+}
+
+#data-autorizacao{
+    text-align: right;
+}
+
+.ass-temistocles{
+    line-height: 7px;
+}

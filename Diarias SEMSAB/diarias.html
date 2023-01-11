@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diárias da SEMSAB</title>
+
+    <link href="css/styleDiarias.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div id="titulo-formulario">
+            <h1>Diárias Motoristas</h1>
+            <h2>Secretária Municipal de Saúde e Saneamento Básico</h2>
+        </div>
+
+        <section id="formulario">
+            <div id="numero-portaria">
+                <label for="numeroPortaria">Número da Portaria</label>
+                <input type="number" name="numeroPortaria" id="numeroPortaria">
+            </div>
+            
+            <div id="selecao-motorista">
+                <label for="motorista">Motorista</label>
+                <select name="motorista" id="motorista">
+                    <option value="">Selecione um Motorista</option>
+                </select>
+            </div>
+
+            <div id="selecao-destino">
+                <label for="destino">Destino</label>
+                <select name="destino" id="inputDestino">
+                    <option value="">Seleciona uma Cidade</option>
+                    <option value="mossoro">Mossoró/RN</option>
+                    <option value="natal">Natal/RN</option>
+                    <option value="fortaleza">Fortaleza/CE</option>
+                </select>
+            </div>
+
+            <div id="data-viagem">
+                <label for="dataDaViagem">Data da viagem</label>
+                <input type="date" name="dataDaViagem" id="viagem">
+            </div>
+
+            <button type="submit" id="gerar">Gerar Documento</button>
+        </section>
+    </header>
+
+    <main>
+        <section id="folha-um altura-a4">
+            <img src="midia/cabeçalho folha.png" alt="cabecalho secretaria municipal de saude" class="img-cabecalho">
+            <div class="corpo-texto">
+                <div id="cabecalho-memorando">
+                    <p id="memorando">Memorando <span id="numeracao"></span>/<span class="anoAtual"></span> - SEMSAB</p>
+                    <p>Portalegre/RN, em <span class="diaAtual"></span> de <span class="mesAtual"></span> de <span class="anoAtual"></span></p>
+                </div>
+                <div id="cabecalho-texto">
+                    <p>Exmo. Sr.</p>
+                    <p class="caixa-alta"><strong>Temistocles Maia de Lucena</strong></p>
+                    <p>Secretário Municipal de Saúde e Saneamento</p>
+                    <p class="caixa-alta sublinhado"><strong>Portalegre - RN</strong></p>
+                    <p><span class="negrito">Assunto:</span> Diária para condução de paciente.</p>
+                </div>
+            </div>
+            <div id="tabela-memorando">
+                <table>
+                    <tr class="centralizado caixa-alta negrito">
+                        <td colspan="2">Dados do Solicitante</td>
+                    </tr>
+                    <tr>
+                        <td>Nome Completo:</td>
+                        <td><span class="nomeMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Cargo/Função:</td>
+                        <td>Motorista</td>
+                    </tr>
+                    <tr>
+                        <td>CPF:</td>
+                        <td><span class="cpfMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Matricula:</td>
+                        <td><span class="matriculaMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Endereço Residencial:</td>
+                        <td><span id="enderecoMotorita"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Telefone:</td>
+                        <td><span id="telefoneMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>E-mail:</td>
+                        <td><span id="emailMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Banco:</td>
+                        <td><span id="bancoMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Agência:</td>
+                        <td><span id="agenciaMotorista"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Conta:</td>
+                        <td><span id="contaMotorista"></span></td>
+                    </tr>
+                    <tr class="centralizado caixa-alta negrito">
+                        <td colspan="2" >Informações da Viagem</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span class="negrito">Atividades a serem desenvolvidas:</span> Conduzir com segurança paciente e acompanhante de Portalegre/RN à <span class="destino"></span></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><span class="negrito">Justificativa da viagem:</span> Levando em consideração que o(a) paciente necessita de transporte adequado para se locomover de Portalegre a <span class="destino"></span>, para realizar procedimentos médicos/consulta médica/tratamento oncológico/exames diversos/perícia médica, fazendo assim necessária a despesa acima mencionada.</td>
+                    </tr>
+                    <tr class="centralizado assinatura">
+                        <td colspan="2"><span class="nomeMotorista"></span>
+                        <p>Motorista</p></td>
+                    </tr>
+                </table>
+            </div>
+            <img src="midia/rodape folha.png" alt="rodape prefeitura municipal de portalegre" class="img-rodape">
+        </section>
+
+        <section id="folha-dois" class="altura-a4">
+            <img src="midia/cabeçalho folha.png" alt="cabecalho secretaria municipal de saude" class="img-cabecalho">
+            <div class="corpo-texto">
+                <h1 class="centralizado">Autorização</h1>
+                <p class="recuo">Considerando que as urgências, emergências, o atendimento médico e a realização de exames especializados constituem um importante componente de assistência à saúde. A Secretaria Municipal de Saúde e Saneamento autoriza o motorista da Prefeitura Municipal de Portalegre/RN, lotado na Secretaria Municipal de Saúde e Saneamento a conduzir os pacientes que necessitam do pronto atendimento de Unidades de Saúde de outros municípios. Assim, poderemos garantir um melhor atendimento à população.</p>
+            </div>
+            <table id="tabela-autorizacao">
+                <tr>
+                    <td class="centralizado negrito">Motorista</td>
+                    <td class="centralizado negrito">Destino Final</td>
+                    <td class="centralizado negrito">Matrícula</td>
+                </tr>
+                <tr>
+                    <td><span class="matriculaMotorista"></span></td>
+                    <td><span class="nomeMotorista"></span></td>
+                    <td><span class="destino"></span></td>
+                </tr>
+            </table>
+
+            <p id="data-autorizacao" class="corpo-texto">Portalegre/RN, em <span class="diaAtual"></span> de <span class="mesAtual"></span> de <span class="anoAtual"></span></p>
+
+            <div class="ass-temistocles centralizado">
+                <span class="sublinhado-ass"></span>
+                <p class="negrito">Temístocles Maia de Lucena</p>
+                <p>Secretário Municipal de Saúde e Saneamento</p>
+                <p>Portaria nº 027/2021</p>
+            </div>
+
+            <img src="midia/rodape folha.png" alt="rodape prefeitura municipal de portalegre" class="img-rodape">
+        </section>
+
+            
+    </main>
+
+
+    
+
+    <script src="javaScript/scriptDiarias.js"></script>
+</body>
+</html>

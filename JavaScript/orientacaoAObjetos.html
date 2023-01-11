@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+
+
+    
+    <script>
+        class Pessoa{
+            constructor(nome, sobrenome){
+                this.nome = nome
+                this.sobrenome = sobrenome
+            }
+            
+            get nome(){
+                return this.nome
+            }
+
+            set nome(nome){
+                this.nome = nome
+            }
+
+            get sobrenome(){
+                return this.sobrenome
+            }
+
+            set sobrenome(sobrenome){
+                this.sobrenome = sobrenome
+            }
+
+            falar(msg){
+                console.log(`${this.nome} está falando: ${msg}`)
+            }   
+
+            comer(){
+                console.log(`${this.nome} está comendo.`)
+            }
+
+            beber(bebida){
+                console.log(`${this.nome} está benbendo ${bebida}`)
+            }
+        }
+    </script>
+
+
+</body>
+</html>
