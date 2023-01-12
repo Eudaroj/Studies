@@ -75,7 +75,7 @@ main{
 }
 
 .corpo-texto{
-    margin: 0 1.5cm;
+    margin: 0 2cm;
 }
 
 .caixa-alta{
@@ -103,6 +103,18 @@ main{
     border-bottom: solid 2px #000;
     display: block;
     margin: auto;
+}
+
+pre{
+    font-size: 15px;
+}
+
+.alinhado-direita{
+    text-align: right;
+}
+
+.linhas-proximas{
+    line-height: 7px;
 }
 
 main img{
@@ -185,10 +197,3 @@ main img{
     width: 300px;
 }
 
-#data-autorizacao{
-    text-align: right;
-}
-
-.ass-temistocles{
-    line-height: 7px;
-}

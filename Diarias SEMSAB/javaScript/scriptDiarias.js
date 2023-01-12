@@ -121,9 +121,11 @@ _button.addEventListener('click', gerarDocumento)
 
 
 function gerarDocumento() {
-    let _numeracao = document.getElementById('numeracao');
+    let _numeracao = document.getElementsByClassName('numeracao');
     let _numInput = document.getElementById('numeroPortaria').value;
-    _numeracao.innerHTML = _numInput
+    for (let index = 0; index < _numeracao.length; index++) {
+        _numeracao[index].innerHTML = _numInput;
+    }
 
     //------
     let _nomesMotorista = document.getElementsByClassName('nomeMotorista')
