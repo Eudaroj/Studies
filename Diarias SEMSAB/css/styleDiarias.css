@@ -5,7 +5,8 @@ body{
 
 /* Formulário */
 header{
-    margin: 40px 150px 100px 150px;
+    margin: 40px auto 100px;
+    width: 60%;
     background-color: #18a999;
     border-radius: 10px;
     padding: 10px;
@@ -22,7 +23,7 @@ header{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 200px;
+    height: 250px;
     background-color:#f7f0f0;
     border: solid 4px #109648 ;
     box-shadow: #484349 -5px 5px 20px;
@@ -38,23 +39,53 @@ header{
 
 #formulario div label{
     border-bottom: solid 2px #18a999;
-    width: 350px;
+    width: 40%;
 }
 
-#formulario input, #formulario select{
-    width: 300px;
+#formulario input{
+    width: 50%;
+    font-size: 18px;
+    text-align: right;
+    padding: 0 10px;
+}
+
+#data-viagem{
+    width: 45%;
+}
+
+#quantidade-diarias{
+    width: 53%;
+}
+
+ #formulario select{
+    width: 52.5%;
+    font-size: 18px;
+    text-align: right;
+    padding: 0 10px;
 }
 
 #formulario button{
     width: 200px;
-    height: 30px;
+    height: 40px;
     background-color: #109648;
     border: solid 2px #109648;
     border-radius: 5px;
     color: #f7f0f0;
     box-shadow: #484349 -2px 2px 5px;
     font-size: 20px;
-    margin: 0 auto;
+    margin: 20px auto 10px;
+}
+
+input:focus{
+    outline: solid 3px #109648;
+    border-radius: 2px;
+    border: none;
+}
+
+select:focus{
+    outline: solid 3px #109648;
+    border-radius: 2px;
+    border: none;
 }
 
 /* Estilização Geral de Todas as Folhas */

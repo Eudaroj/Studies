@@ -84,36 +84,13 @@ let motoristas = [
 //Recupero o Input de seleção de Motoristas (preciso recuperar o objeto!)
 let _inputMotorista = document.getElementById('motorista')
 
-for (let index = 0; index < motoristas.length; index++) {
-    let opcao = document.createElement('option');
-    opcao.textContent = motoristas[index].nome;
-    
-    _inputMotorista.appendChild(opcao);
-}
-
-
-let dataAtual = new Date()
-
-let _diaAtual = document.getElementsByClassName('diaAtual');
-for (let index = 0; index < _diaAtual.length; index++) {
-    _diaAtual[index].innerHTML = dataAtual.getDate();
-}
-
-let _mesAtual = document.getElementsByClassName('mesAtual');
-for (let index = 0; index < _mesAtual.length; index++) {
-    let mes = dataAtual.getMonth()
-    let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
-    _mesAtual[index].innerHTML = meses[mes]
-}
-
-
-let _anoAtual = document.getElementsByClassName('anoAtual');
-for (let index = 0; index < _anoAtual.length; index++) {
-    _anoAtual[index].innerHTML = dataAtual.getFullYear();
-}
-
-
-
+//Criando opções no select De Motoristas
+    for (let index = 0; index < motoristas.length; index++) {
+        let opcao = document.createElement('option');
+        opcao.textContent = motoristas[index].nome;
+        
+        _inputMotorista.appendChild(opcao);
+    }
 
 let _button = document.getElementById('gerar');
 
@@ -121,22 +98,44 @@ _button.addEventListener('click', gerarDocumento)
 
 
 function gerarDocumento() {
+//Pegando e Adicionando Data Atualizada 
+    let dataAtual = new Date()
+
+    let _diaAtual = document.getElementsByClassName('diaAtual');
+    for (let index = 0; index < _diaAtual.length; index++) {
+        _diaAtual[index].innerHTML = dataAtual.getDate();
+    }
+
+    let _mesAtual = document.getElementsByClassName('mesAtual');
+    for (let index = 0; index < _mesAtual.length; index++) {
+        let mes = dataAtual.getMonth()
+        let meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro']
+        _mesAtual[index].innerHTML = meses[mes]
+    }
+
+
+    let _anoAtual = document.getElementsByClassName('anoAtual');
+    for (let index = 0; index < _anoAtual.length; index++) {
+        _anoAtual[index].innerHTML = dataAtual.getFullYear();
+    }
+
+//Numeração de Memorando e Portaria
     let _numeracao = document.getElementsByClassName('numeracao');
     let _numInput = document.getElementById('numeroPortaria').value;
     for (let index = 0; index < _numeracao.length; index++) {
         _numeracao[index].innerHTML = _numInput;
     }
 
-    //------
+//Preenchendo Formulario
     let _nomesMotorista = document.getElementsByClassName('nomeMotorista')
     for (let index = 0; index < _nomesMotorista.length; index++) {
         _nomesMotorista[index].innerHTML = _inputMotorista.value
     }
+
     //-------
 
     let _cpfsMotorista = document.getElementsByClassName('cpfMotorista')
-    for (let index = 0; index < _cpfsMotorista.length; index++) {
-        _cpfsMotorista[index].innerHTML = _motorista.cpf
+    for (let index = 0; index < _cpfsMotorista.length; index++) { 
     }
 
     //---------
@@ -154,7 +153,6 @@ function gerarDocumento() {
 
     //--------
 
-    let _
 }
 
 

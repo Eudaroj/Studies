@@ -37,9 +37,20 @@
                 </select>
             </div>
 
-            <div id="data-viagem">
-                <label for="dataDaViagem">Data da viagem</label>
-                <input type="date" name="dataDaViagem" id="viagem">
+            <div class="container">
+                <div id="data-viagem">
+                    <label for="dataDaViagem">Data da viagem</label>
+                    <input type="date" name="dataDaViagem" id="viagem">
+                </div>
+                <div id="quantidade-diarias">
+                    <label for="quantidadeDiarias">Diárias</label>
+                    <select name="quantidadeDiarias" id="diarias">
+                        <option value="meia">0.5</option>
+                        <option value="uma">1</option>
+                        <option value="duas">2</option>
+                        <option value="três">3</option>
+                     </select>
+                </div>
             </div>
 
             <button type="submit" id="gerar">Gerar Documento</button>
