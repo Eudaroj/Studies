@@ -107,6 +107,7 @@ main{
 
 .corpo-texto{
     margin: 0 2cm;
+    line-height: 28px;
 }
 
 .caixa-alta{
@@ -138,6 +139,7 @@ main{
 
 pre{
     font-size: 15px;
+    line-height: 20px;
 }
 
 .alinhado-direita{
