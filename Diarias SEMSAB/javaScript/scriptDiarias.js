@@ -97,8 +97,14 @@ let _inputQtdDiarias = document.getElementById("diarias")
     }
 
 let _button = document.getElementById("gerar");
+let _documentoCompleto = document.getElementById("documento-completo")
 
 _button.addEventListener("click", gerarDocumento)
+_button.addEventListener("click", function(){
+    _documentoCompleto.classList.remove("hidden")
+})
+
+
 
 
 function gerarDocumento() {
@@ -260,19 +266,35 @@ function gerarDocumento() {
     }
 
 //Preenchendo Data da Viagem
-    // let _dataDaViagem = document.getElementById("dataViagem")
-    // let stringInputToDate = new Date(_inputDataDaViagem)
-    // let dataFormatada = " " 
+    let _dataDaViagem = document.getElementById("dataViagem")
+    let stringInputToDate = new Date(_inputDataDaViagem.value)
+    let dia = stringInputToDate.getDate()+1 
+    let mes = " "
+    if(stringInputToDate.getMonth() < 10){
+         mes = `0${stringInputToDate.getMonth()+1}`
+        }else{
+          mes = stringInputToDate.getMonth()+1
+        }
+
+    if(_inputQtdDiarias.value == "0.5" || _inputQtdDiarias.value == "1"){
+        _dataDaViagem.innerHTML = `${dia}/${mes}`
+    }else if(_inputQtdDiarias.value == "2"){
+        _dataDaViagem.innerHTML = `${dia} e ${dia+1}/${mes}`
+    }else if(_inputQtdDiarias.value == "3"){
+        _dataDaViagem.innerHTML = `${dia}, ${dia+1} e ${dia+2}/${mes}`
+    }
+
     // if(stringInputToDate.getMonth() < 10){
-    //      dataFormatada = (stringInputToDate.getDate()) + "/" + ("0" + stringInputToDate.getMonth() + 1)
+    //      dataFormatada = (stringInputToDate.getDate() + 1) + "/0" + (stringInputToDate.getMonth() + 1)
     //     }else{
-    //       dataFormatada = (stringInputToDate.getDate()) + "/" + (stringInputToDate.getMonth() + 1)
+    //       dataFormatada = (stringInputToDate.getDate() + 1) + "/" + (stringInputToDate.getMonth())
     //     }
 
     // if(_inputQtdDiarias.value == "0.5" || _inputQtdDiarias.value == "1"){
     //     _dataDaViagem.innerHTML = dataFormatada
+    // }else if(_inputQtdDiarias.value == "2"){
+    //     _dataDaViagem.innerHTML = `${stringInputToDate.getDate()}`
     // }
-
 
 }
 
