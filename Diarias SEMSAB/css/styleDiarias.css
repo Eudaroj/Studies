@@ -19,27 +19,28 @@ header{
 
 #titulo-formulario{
     text-align: center;
-    line-height: 20px;
+    line-height: 4vh;
     color: #f7f0f0;
+    font-size: 3vh;
 }
 
 #formulario{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 270px;
+    height: 40vh;
     background-color:#f7f0f0;
     border: solid 4px #109648 ;
     box-shadow: #484349 -5px 5px 20px;
     border-radius: 10px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 3vh;
 }
 
 #formulario div{
     display: flex;
     justify-content: space-between;
-    margin: 10px 0;
+    margin: 1.2vh 0;
 }
 
 #formulario div label{
@@ -49,7 +50,7 @@ header{
 
 #formulario input{
     width: 50%;
-    font-size: 18px;
+    font-size: 3vh;
     text-align: right;
     padding: 0 10px;
 }
@@ -64,21 +65,21 @@ header{
 
  #formulario select{
     width: 52.5%;
-    font-size: 18px;
+    font-size: 3vh;
     text-align: right;
     padding: 0 10px;
 }
 
 #formulario button{
-    width: 200px;
-    height: 40px;
+    width: 20vw;
+    height: 6vh;
     background-color: #109648;
     border: solid 2px #109648;
     border-radius: 5px;
     color: #f7f0f0;
     box-shadow: #484349 -2px 2px 5px;
-    font-size: 20px;
-    margin: 20px auto 10px;
+    font-size: 3vh;
+    margin: 1.2vh auto 0.8vh;
 }
 
 input:focus{
@@ -98,7 +99,6 @@ main{
     font-family: 'Times New Roman', Times, serif;
     width: 21cm;
     margin: auto;
-    padding: 0 2cm;
     text-align: justify;
     background-color: #fff;
 }
@@ -108,7 +108,7 @@ main{
 }
 
 .altura-a4{
-    height: 29.7cm;
+    height: 30.5cm;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -242,4 +242,22 @@ main img{
 /* Estilizando Folha Cinco */
 .ultAss{
     margin-top: 70px;
+}
+
+
+@media print{
+    body{
+        margin: 0;
+    }
+
+    header{
+        display: none;
+    }
+
+
+
+    section{
+        page-break-after: always;
+    }
+
 }
